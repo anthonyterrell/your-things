@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    protected $casts = [
+        'creationDate' => 'datetime:Y-m-d',
+    ];
+
     protected $table = 'TMTask';
 
     public function scopeCancelled($query)
